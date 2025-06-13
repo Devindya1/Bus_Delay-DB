@@ -1,6 +1,3 @@
--- s22009929  422514032 
--- Question 03
-
 DROP TABLE Driver;
 CREATE TABLE Driver (
    DriverID INT PRIMARY KEY NOT NULL,
@@ -49,7 +46,6 @@ CREATE TABLE DelayRecord (
    FOREIGN KEY (ScheduleID) REFERENCES Schedule(ScheduleID)
 );
 
--- Question 04
 
 -- Drver table records
 INSERT ALL
@@ -574,16 +570,11 @@ INSERT ALL
   INTO DelayRecord (RecordID, Actual_Departure, Actual_Arrival, Delay_Minutes, ScheduleID) VALUES (100, '07:45 PM', '09:00 PM', 30, 100)
 SELECT 1 FROM DUAL;
 
--- QUESTION 05
 
 SELECT * FROM Driver;
-
 SELECT * FROM Bus;
-
 SELECT * FROM Route;
-
 SELECT * FROM Schedule;
-
 SELECT * FROM DelayRecord;
 
 -- Get the records of buses with their drivers and routes (SELECT)
@@ -629,7 +620,6 @@ DELETE FROM Route WHERE RouteID = 101;
 DELETE FROM Bus WHERE BusID = 101;
 DELETE FROM Driver WHERE DriverID = 101;
 
--- QUESTION 06
 -- Create procedure to instert new driver into driver table
 DROP PROCEDURE AddNewDriver;
 CREATE OR REPLACE PROCEDURE AddNewDriver (
@@ -680,7 +670,6 @@ END;
 
 SELECT CalTotalDelay(55)AS TotalDelay FROM dual;
 
--- QUESTION 07
 -- Creating index
 CREATE INDEX idx_schedule_busid ON Schedule(BusID);
 
