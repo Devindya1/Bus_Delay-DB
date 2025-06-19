@@ -23,6 +23,7 @@ CREATE TABLE Route (
    Start_Point VARCHAR (50),
    End_Point VARCHAR (50),
    Distance VARCHAR (10)
+   FOREIGN KEY (DriverID) REFERENCES Driver(DriverID) 
 );
 
 DROP TABLE Schedule;
