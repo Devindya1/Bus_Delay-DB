@@ -616,10 +616,6 @@ SELECT FName, Contact FROM Driver WHERE DriverID = 21;
 
 -- DELETE the records
 DELETE FROM DelayRecord WHERE RecordID = 101;
-DELETE FROM Schedule WHERE ScheduleID = 101;
-DELETE FROM Route WHERE RouteID = 101;
-DELETE FROM Bus WHERE BusID = 101;
-DELETE FROM Driver WHERE DriverID = 101;
 
 -- Create procedure to instert new driver into driver table
 DROP PROCEDURE AddNewDriver;
@@ -673,6 +669,7 @@ SELECT CalTotalDelay(55)AS TotalDelay FROM dual;
 
 -- Creating index
 CREATE INDEX idx_schedule_busid ON Schedule(BusID);
+CREATE INDEX idx_route_busid ON Route(BusID);
 
 SELECT * FROM Schedule WHERE BusID = 20;
 
